@@ -25,8 +25,17 @@ public partial class RegisterWindow : Window
 
     private void Register_Click(object sender, RoutedEventArgs e)
     {
-        MainToDoWindow ToDoWindow = new MainToDoWindow();
-        ToDoWindow.Show();
-        this.Visibility = Visibility.Collapsed;
+        LoginWindow loginWindow = new LoginWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation,
+            WindowState = WindowState,
+            Height = Height,
+            Width = Width,
+            Left = Left,
+            Top = Top
+        };
+        loginWindow.Show();
+        this.Close();
+
     }
 }

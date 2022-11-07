@@ -22,4 +22,19 @@ public partial class LoginWindow : Window
     {
         InitializeComponent();
     }
+
+    private void LogIn_Click(object sender, RoutedEventArgs e)
+    {
+        MainToDoWindow ToDoWindow = new MainToDoWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation,
+            WindowState = WindowState,
+            Height = Height,
+            Width = Width,
+            Left = Left,
+            Top = Top
+        };
+        ToDoWindow.Show();
+        this.Close();
+    }
 }

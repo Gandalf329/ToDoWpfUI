@@ -26,16 +26,34 @@ public partial class MainWindow : Window
 
     private void SignIn_Click(object sender, RoutedEventArgs e)
     {
-        LoginWindow loginWindow = new LoginWindow();
+        LoginWindow loginWindow = new LoginWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation,
+            WindowState = WindowState,
+            Height = Height,
+            Width = Width,
+            Left = Left,
+            Top = Top
+        };
         loginWindow.Show();
-        this.Visibility = Visibility.Collapsed;
+        this.Close();
 
     }
 
     private void Register_Click(object sender, RoutedEventArgs e)
     {
-        RegisterWindow registerWindow = new RegisterWindow();
+
+        RegisterWindow registerWindow = new RegisterWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation,
+            WindowState = WindowState,
+            Height = Height,
+            Width = Width,
+            Left = Left,
+            Top = Top
+        };
+        
         registerWindow.Show();
-        this.Visibility = Visibility.Collapsed;
+        this.Close();
     }
 }

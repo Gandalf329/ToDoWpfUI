@@ -24,6 +24,7 @@
                 <SolidColorBrush Color="#BFFF9523" Opacity="0.9"/>
             </ui:Button.MouseOverBackground>
         </ui:Button>
+        <Label Content="ToDo" HorizontalAlignment="Center" Margin="0,71,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="#FFFF9523"/>
 
     </Grid>
 </Window>

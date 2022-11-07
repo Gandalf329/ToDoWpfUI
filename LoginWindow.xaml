@@ -8,7 +8,24 @@
         Title="Login" Height="650" Width="800"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" >
     <Grid>
+
         <Label Content="Login" HorizontalAlignment="Center" Margin="0,71,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="#FFFF9523"/>
+        <ui:Button x:Name="LogIn" Content="Log In" Margin="0,520,0,0"  Background="#FFFF9523" Width="180" HorizontalAlignment="Center" FontSize="16" Appearance="Primary"  VerticalAlignment="Top" Click="LogIn_Click">
+            <ui:Button.PressedBackground>
+                <SolidColorBrush Color="#3FFF9523" Opacity="0.7"/>
+            </ui:Button.PressedBackground>
+            <ui:Button.MouseOverBackground>
+                <SolidColorBrush Color="#BFFF9523" Opacity="0.9"/>
+            </ui:Button.MouseOverBackground>
+        </ui:Button>
+        <Canvas x:Name="Login" VerticalAlignment="Center" HorizontalAlignment="Center" Width="800" Height="300">
+            <ui:TextBox HorizontalAlignment="Left" TextWrapping="Wrap" PlaceholderText="Login" Width="355" MinWidth="255" Canvas.Left="400" Canvas.Top="155" VerticalAlignment="Top" />
+            <Label Content="Login" VerticalAlignment="Top" Foreground="#FFFF9523" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Width="53" Canvas.Left="175" Canvas.Top="157"/>
+            <ui:PasswordBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="" Height="40" Width="355" MinWidth="255" Canvas.Left="400" Canvas.Top="215" VerticalAlignment="Top" />
+            <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFFF9523" FontSize="20" FontWeight="Bold" Canvas.Left="175" Canvas.Top="220"/>
+
+        </Canvas>
+
 
     </Grid>
 </Window>

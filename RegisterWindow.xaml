@@ -9,11 +9,7 @@
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" >
     <Grid>
         <Label Content="Register" HorizontalAlignment="Center" Margin="0,71,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="#FFFF9523"/>
-        <ui:TextBox HorizontalAlignment="Left" Margin="425,280,0,0" TextWrapping="Wrap" PlaceholderText="Login" VerticalAlignment="Top" Width="205" Padding="10,8,154,7" />
-        <ui:TextBox HorizontalAlignment="Left" Margin="425,340,0,0" TextWrapping="Wrap" PlaceholderText="Email" VerticalAlignment="Top" Width="205" Padding="10,8,154,7" />
-        <ui:PasswordBox HorizontalAlignment="Left" Margin="425,400,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="205" Height="40" Padding="10,8,154,25"/>
-        <ui:PasswordBox HorizontalAlignment="Left" Margin="425,460,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="205" Height="40" Padding="10,8,154,25"/>
-        <ui:Button x:Name="Register" Content="Register" Margin="0,520,0,0"  Background="#FFFF9523" Width="180" HorizontalAlignment="Center" FontSize="16" Appearance="Primary"  VerticalAlignment="Top" Click="Register_Click">
+        <ui:Button x:Name="Register" Content="Sign Up" Margin="0,520,0,0"  Background="#FFFF9523" Width="180" HorizontalAlignment="Center" FontSize="16" Appearance="Primary"  VerticalAlignment="Top" Click="Register_Click">
             <ui:Button.PressedBackground>
                 <SolidColorBrush Color="#3FFF9523" Opacity="0.7"/>
             </ui:Button.PressedBackground>
@@ -21,10 +17,16 @@
                 <SolidColorBrush Color="#BFFF9523" Opacity="0.9"/>
             </ui:Button.MouseOverBackground>
         </ui:Button>
-        <Label Content="Confirm Password" HorizontalAlignment="Left" Margin="200,465,0,0" VerticalAlignment="Top" Foreground="#FFFF9523" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="200,405,0,0" VerticalAlignment="Top" Foreground="#FFFF9523" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="200,342,0,0" VerticalAlignment="Top" Foreground="#FFFF9523" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Login" Margin="200,282,0,0" VerticalAlignment="Top" Foreground="#FFFF9523" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Width="53"/>
+        <Canvas HorizontalAlignment="Center" VerticalAlignment="Center" Width="800" Height="300">
+            <Label Content="Confirm Password" Foreground="#FFFF9523" FontSize="20" FontWeight="Bold" Canvas.Left="175" Canvas.Top="220" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label Content="Password" Foreground="#FFFF9523" FontSize="20" FontWeight="Bold" Canvas.Left="175" Canvas.Top="160" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label Content="Email" Foreground="#FFFF9523" FontSize="20" FontWeight="Bold" Canvas.Left="175" Canvas.Top="97" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label Content="Login" Foreground="#FFFF9523" FontSize="20" FontWeight="Bold" Width="53" Canvas.Left="175" Canvas.Top="37" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <ui:TextBox TextWrapping="Wrap" PlaceholderText="Login" Width="355" MinWidth="255" Canvas.Left="400" Canvas.Top="35" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <ui:TextBox TextWrapping="Wrap" PlaceholderText="Email" Width="355"  MinWidth="255" Canvas.Left="400" Canvas.Top="95" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <ui:PasswordBox TextWrapping="Wrap" Text="" Height="40" Width="355" MinWidth="255" Canvas.Left="400" Canvas.Top="155" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <ui:PasswordBox TextWrapping="Wrap" Text="" Height="40" Width="355" MinWidth="255" Canvas.Left="400" Canvas.Top="215" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        </Canvas>
 
     </Grid>
 </Window>
