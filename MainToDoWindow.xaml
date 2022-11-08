@@ -8,7 +8,15 @@
         Title="Register" Height="650" Width="800"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" >
     <Grid>
-        <Label Content="Today" HorizontalAlignment="Center" Margin="0,71,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="#FFFF9523"/>
+        <Label Content="ToDo Today" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="#FFFF9523"/>
+        <Frame x:Name="Main" Margin="125,62,50,17" Width="625"/>
+        <ListBox Margin="0,67,675,0">
+            <ListBox.Items>
+                <ListBoxItem Background="#BFFF9523" BorderBrush="#BFFF9523">Today</ListBoxItem>
+                <ListBoxItem Background="#BFFF9523" BorderBrush="#BFFF9523">Favorites</ListBoxItem>
+                <ListBoxItem Background="#BFFF9523" BorderBrush="#BFFF9523">Project 1</ListBoxItem>
+            </ListBox.Items>
+        </ListBox>
 
     </Grid>
 </Window>

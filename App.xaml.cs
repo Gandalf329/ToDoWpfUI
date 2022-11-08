@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Wpf.Ui.Mvvm.Contracts;
 
 namespace WpfUI1;
 /// <summary>
@@ -12,4 +13,5 @@ namespace WpfUI1;
 /// </summary>
 public partial class App : Application
 {
+    
 }
