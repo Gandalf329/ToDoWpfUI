@@ -20,17 +20,44 @@ namespace WpfUI1;
 /// <summary>
 /// Логика взаимодействия для MainToDoWindow.xaml
 /// </summary>
+
 public partial class MainToDoWindow : Window
 {
+    ObservableCollection<string> projects;
     public MainToDoWindow()
     {
 
-        taskName.Add("Today");
-        taskName.Add("Favorite");
-        taskName.Add("Projects");
+       
+
         InitializeComponent();
+        projects = new ObservableCollection<string> { "Today", "Favorite", "Test" };
+        projectsList.ItemsSource = projects;
     }
-    List<string> taskName = new List<string>();
 
-
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        if(projectTextBox.Text.Length > 0)
+        {
+            string phone = projectTextBox.Text;
+            // добавление нового объекта
+            projects.Add(phone);
+            projectTextBox.Text = "";
+        }
+        
+    }
+}
+public class Task
+{
+    public string? Project
+    {
+        get; set;
+    }
+    public string? Category
+    {
+        get; set;
+    }
+    public string? TaskName
+    {
+        get; set;
+    }
 }
