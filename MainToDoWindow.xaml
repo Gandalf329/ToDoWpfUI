@@ -24,11 +24,16 @@
         <ListBox x:Name="projectsList" SelectionChanged="projectsList_SelectionChanged" Margin="0,67,0,0" HorizontalAlignment="Left" Width="120">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Margin="5">
-                        <Ellipse HorizontalAlignment="Left" Height="5" Width="5" Margin="154,200,0,0"  VerticalAlignment="Top" Fill="{Binding Path=Color}" />    
-                        <TextBlock FontSize="16" Text="{Binding Path=ProjectName}" HorizontalAlignment="Center" />
-                    </StackPanel>
+                    <Grid Margin="0,0,0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <Ellipse HorizontalAlignment="Left" Height="10" Width="10" Margin="0,0,0,0"  VerticalAlignment="Center" Fill="{Binding Path=Color}" />
+                        <TextBlock FontSize="16" Text="{Binding Path=ProjectName}"  Margin="15,0,0,0" HorizontalAlignment="Center" />
+                    </Grid>
                 </DataTemplate>
+                
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Content="Add project" Margin="10,28,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Button_Click"/>
