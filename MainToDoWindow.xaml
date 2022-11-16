@@ -7,21 +7,11 @@
         mc:Ignorable="d"
         Title="Register" Height="650" Width="800"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" >
-    <Window.Resources>
-        <DataTemplate x:Key="listTemplate">
-            <StackPanel Margin="5">
-                <Ellipse HorizontalAlignment="Center" Height="5" Width="5" Margin="-10,200,0,0"  VerticalAlignment="Top" Fill="{Binding Path=Color}" />
-                <TextBlock FontSize="16" Text="{Binding Path=ProjectName}" HorizontalAlignment="Center" />
-            </StackPanel>
-        </DataTemplate>
-        <ItemsPanelTemplate x:Key="listPanelTemplate">
-            <WrapPanel />
-        </ItemsPanelTemplate>
-    </Window.Resources>
+    
     <Grid>
         <Label Content="ToDo Today" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="#FFFF9523"/>
-        <Frame x:Name="Main" Margin="125,67,50,17" Width="625"/>
-        <ListBox x:Name="projectsList" SelectionChanged="projectsList_SelectionChanged" Margin="0,67,0,0" HorizontalAlignment="Left" Width="120">
+
+        <ListBox x:Name="projectsList" SelectionChanged="projectsList_SelectionChanged" Margin="0,67,0,0" HorizontalAlignment="Left" Width="150" Padding="0,0,0,0" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,0,0,5">
@@ -30,10 +20,21 @@
                             <ColumnDefinition Width="50" />
                         </Grid.ColumnDefinitions>
                         <Ellipse HorizontalAlignment="Left" Height="10" Width="10" Margin="0,0,0,0"  VerticalAlignment="Center" Fill="{Binding Path=Color}" />
-                        <TextBlock FontSize="16" Text="{Binding Path=ProjectName}"  Margin="15,0,0,0" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="16" Text="{Binding Path=ProjectName}"  Margin="15,0,0,0" HorizontalAlignment="Center"   />
                     </Grid>
                 </DataTemplate>
                 
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="categoriesList" SelectionChanged="categoriesList_SelectionChanged" Margin="155,67,0,0" HorizontalAlignment="Left" Width="150" Padding="0,0,0,0" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <ListBoxItem Background="#BFFF9523" BorderBrush="#BFFF9523" IsSelected="{Binding Path=Select}">
+                            <TextBlock FontSize="16" Text="{Binding Path=CategoryName}" HorizontalAlignment="Center"  Visibility="{Binding Path=Visible}" />
+                        </ListBoxItem>
+                    </StackPanel>
+                </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Content="Add project" Margin="10,28,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Button_Click"/>
