@@ -23,41 +23,54 @@ namespace WpfUI1;
 
 public partial class MainToDoWindow : Window
 {
-    ObservableCollection<string> projects;
+    //ObservableCollection<string> projects;
+    public ObservableCollection<Project> Projects
+    {
+        get; set;
+    }
     public MainToDoWindow()
     {
 
        
 
         InitializeComponent();
-        projects = new ObservableCollection<string> { "Today", "Favorite", "Test" };
-        projectsList.ItemsSource = projects;
+        Projects = new ObservableCollection<Project>
+        {
+            new Project {ProjectName = "Test1", Color = "#00955C"},
+            new Project {ProjectName = "Test2", Color = "#FF9523"},
+            new Project {ProjectName = "Test3", Color = "#E01515"},
+            new Project {ProjectName = "Test4", Color = "#FB4E71"}
+        };
+        //projects = new ObservableCollection<string> { "Today", "Favorite", "Test" };
+        //projectsList.ItemsSource = projects;
+        projectsList.ItemsSource = Projects;
     }
-
+    private void projectsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        Project p = (Project)projectsList.SelectedItem;
+        System.Windows.MessageBox.Show(p.ProjectName);
+    }
     private void Button_Click(object sender, RoutedEventArgs e)
     {
-        if(projectTextBox.Text.Length > 0)
+        if (projectTextBox.Text.Length > 0)
         {
-            string phone = projectTextBox.Text;
+            string proj = projectTextBox.Text;
             // добавление нового объекта
-            projects.Add(phone);
+            Projects.Add(new Project { ProjectName = proj, Color = "#00955c" });
             projectTextBox.Text = "";
         }
-        
+
     }
 }
-public class Task
+public class Project
 {
-    public string? Project
+    public string? ProjectName
     {
         get; set;
     }
-    public string? Category
+    public string? Color
     {
         get; set;
     }
-    public string? TaskName
-    {
-        get; set;
-    }
+
 }
